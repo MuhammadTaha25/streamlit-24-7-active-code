@@ -10,10 +10,10 @@ from streamlit_mic_recorder import speech_to_text
 # langsmith_api_key="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"
 # langsmith_project="muskchatbot"
 
-OPENAI_API_KEY =st.secrets['OPENAI_API_KEY']
+# OPENAI_API_KEY =st.secrets['OPENAI_API_KEY']
 GOOGLE_API_KEY =st.secrets['google_api_key']
 
-LLM=initialize_LLM(OPENAI_API_KEY,GOOGLE_API_KEY)
+LLM=initialize_LLM(GOOGLE_API_KEY)
 retriever=manage_pinecone_store()
 chain=create_expert_chain(LLM,retriever)
 # Build the chain
@@ -51,6 +51,7 @@ if (query and st.session_state.send_input) :
 with chat_container:
     for role, message in st.session_state.messages:
         st.chat_message(role).write(message) 
+
 
 
 
