@@ -1,0 +1,15 @@
+langchain
+langchain-community
+langsmith
+langchain_huggingface
+transformers
+langchain_pinecone
+langchain-google-genai
+langchain-openai
+openai
+streamlit
+streamlit-float
+streamlit-mic-recorder
+audio_recorder_streamlit
+bs4
+python-dotenv
