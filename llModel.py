@@ -11,9 +11,10 @@ LANGSMITH_TRACING='true'
 LANGSMITH_ENDPOINT="https://api.smith.langchain.com"
 LANGSMITH_API_KEY="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"
 LANGSMITH_PROJECT="muskchatbot"
-OPENAI_API_KEY =st.secrets['OPENAI_API_KEY']
+# OPENAI_API_KEY =st.secrets['OPENAI_API_KEY']
+GOOGLE_API_KEY=st.secrets['google_api_key']
 @traceable
-def initialize_LLM(openai_api_key=None, gemini_api_key=None):
+def initialize_LLM(openai_api_key=None, gemini_api_key=GOOGLE_API_KEY):
     """
     Initialize a Language Learning Model (LLM) using OpenAI or Gemini based on the availability of API keys.
 
@@ -63,3 +64,4 @@ def initialize_LLM(openai_api_key=None, gemini_api_key=None):
         raise ValueError("No API keys provided. Please set the OpenAI or Gemini API key.")
 
     return LLM
+
